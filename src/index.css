@@ -1,0 +1,128 @@
+body {
+   margin: 0;
+   font-family: sans-serif;
+}
+
+.container {
+   display: flex;
+   max-width: 600px;
+   height: 100vh;
+   margin: 0 auto;
+   padding: 1rem;
+   align-items: center;
+   justify-content: center;
+}
+
+.containerList {
+   max-width: 600px;
+   height: 100vh;
+   margin: 0 auto;
+   padding: 1rem;
+}
+
+.containerButtonTask {
+   display: flex;
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 1rem;
+   align-items: center;
+   justify-content: center;
+}
+
+.sectionButton {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+button {
+   padding: 1.5rem 6.3rem;
+   font-size: 1.3rem;
+   border: none;
+   border-radius: 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -ms-border-radius: 8px;
+   -o-border-radius: 8px;
+   background: #73c3f1;
+   cursor: pointer;
+}
+
+button:active {
+   background: #2c5974;
+}
+
+.buttonTask {
+   display: flex;
+   align-items: center;
+}
+
+.modal-overlay{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   width: 45vh;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+.modal-content {
+   background: #fff;
+   padding: 5.5rem 1.3rem;
+   border-radius: 22px;
+   -webkit-border-radius: 22px;
+   -moz-border-radius: 22px;
+   -ms-border-radius: 22px;
+   -o-border-radius: 22px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   width: 80%;
+   max-width: 400px;
+}
+
+.modal-content input {
+   padding: 0.75rem;
+   border: 1px solid;
+   border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   -ms-border-radius: 7px;
+   -o-border-radius: 7px;
+}
+
+.modal-content button {
+   padding: 1.2rem;
+   border-radius: 8;
+   -webkit-border-radius: 8;
+   -moz-border-radius: 8;
+   -ms-border-radius: 8;
+   -o-border-radius: 8;
+   cursor: pointer;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+}
+
+li{
+   display: flex;
+   align-items: center;
+   padding: 0.7rem 0;
+   border: 2px solid #747272;
+   margin-bottom: 0.6rem;
+}
+
+.loading{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem;
+}

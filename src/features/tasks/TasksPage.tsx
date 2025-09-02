@@ -9,17 +9,18 @@ export const TasksPage = () => {
 
 
    return (
-      <div style={{ padding: '1rem' }}>
-         <h2>List tasks</h2>
+      <div className='containerList'>
+         <div className='containerButtonTask'>
+            <button  onClick={()=>{
+               setModalOpen(!modalOpen)
+            }}>New Task</button>
+         </div>
+
          <ul>
             {tasks.map((task) => (
                <li key={task.id}> {task.description} </li>
             ))}
          </ul>
-
-         <button onClick={()=>{
-            setModalOpen(!modalOpen)
-         }}>Add Task</button>
 
          {modalOpen && <TaskModal onClose={()=>setModalOpen(!modalOpen)} />}
       </div>

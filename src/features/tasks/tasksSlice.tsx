@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Task {
    id?: string;
-   name: string
    description: string;
 }
 
@@ -16,8 +15,8 @@ const tasksSlice = createSlice({
    name: 'tasks',
    initialState,
    reducers: {
-      addTask: (state, action: PayloadAction<Task>) => {
-         state.list.push({ id: Date.now().toString(), name: action.payload.name,  description: action.payload.description })
+      addTask: (state, action: PayloadAction<string>) => {
+         state.list.push({ id: Date.now().toString(),  description: action.payload })
       },
    },
 })

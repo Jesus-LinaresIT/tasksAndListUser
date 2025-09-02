@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom'
 
 function HomePage() {
    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
-         <Link to="/tasks">
-         <button>Tasks</button>
-         </Link>
+      <div className='container'>
+         <div className='sectionButton'>
+            <Link to="/tasks">
+               <button className='textButton'>Tasks</button>
+            </Link>
 
-         <Link to="/listed">
-            <button>List</button>
-         </Link>
+            <Link to="/listed">
+               <button className='textButton' style={{ paddingRight: '6.9rem' }}>Lists</button>
+            </Link>
+         </div>
 
       </div>
    )

@@ -7,40 +7,28 @@ interface Props {
 }
 
 export const TaskModal = ({ onClose }: Props) => {
-   const [ newTask, setNewTask ] = useState({
-      name: '',
-      description: ''
-   })
+   const [ description, setDescription ] = useState('')
 
    const dispatch = useDispatch();
 
    const handleSave = () => {
-      const { name, description } = newTask;
-      if (!description.trim() && !name.trim()) return alert('El campo no puede estar vacío');
-      dispatch(addTask(newTask));
+      if (!description.trim()) return alert('El campo no puede estar vacío');
+      dispatch(addTask(description));
       onClose();
    }
 
    return (
-      <div style={{ border: '1px solid #ccc', padding: '1rem', marginTop:'1rem' }}>
-         <h3>New Task</h3>
-         <input
-            type='text'
-            placeholder='Task Name'
-            value={newTask.name}
-            onChange={(e) => setNewTask( prev => ({ ...prev, name: e.target.value }) )}
-         />
+      <div className='modal-overlay'>
+         <div className='modal-content'>
+            <input
+               type='text'
+               placeholder='New Task Name'
+               value={description}
+               onChange={(e) => setDescription( e.target.value )}
+            />
 
-         <input
-            type='text'
-            placeholder='Description'
-            value={newTask.description}
-            onChange={(e) => setNewTask( prev => ({ ...prev, description: e.target.value }) )}
-         />
-
-         <button onClick={handleSave}>Guardar</button>
-         <button onClick={onClose}>Cancelar</button>
+            <button className='addButton' onClick={handleSave}>Add</button>
+         </div>
       </div>
-     
    )
 }
